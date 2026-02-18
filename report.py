@@ -32,7 +32,7 @@ def generate_pdf(data):
 
     m = [
         ["Target Output Rate (units/hr)", f"{data['target_rate']}"],
-        ["Actual Output Rate (units/hr)", f"{data['actual_rate']}"],
+        ["Actual Output Rate (units/hr)", f"{data['actual_rate']:.2f}"],
         ["Cycle Time (min)", f"{data['cycle_time']}"],
         ["Number of Workstations", f"{data['stations']}"],
         ["Line Efficiency (%)", f"{data['efficiency']:.2f}"]
