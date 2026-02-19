@@ -22,7 +22,7 @@ def display_results(alloc_df, target_rate, actual_rate, cycle_time, stations, ef
 
     st.subheader("Key Metrics")
     st.write(f"Target Output Rate: {target_rate}")
-    st.write(f"Actual Output Rate: {actual_rate:.2f}%")
+    st.write(f"Actual Output Rate: {actual_rate:.2f}")
     st.write(f"Cycle Time: {cycle_time}")
     st.write(f"Number of Workstations: {stations}")
     st.write(f"Efficiency: {efficiency:.2f}%")

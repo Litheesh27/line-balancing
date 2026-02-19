@@ -30,7 +30,9 @@ def run_line_balancing(df, output_rate):
 
     graph, indeg = defaultdict(list), {t:0 for t in tasks}
     for t, ps in task_preds.items():
-        for p in ps: graph[p].append(t); indeg[t]+=1
+        for p in ps: 
+            graph[p].append(t)
+            indeg[t]+=1
 
     q, order = deque([t for t in tasks if indeg[t]==0]), []
     
