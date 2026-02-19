@@ -37,7 +37,8 @@ def run_line_balancing(df, output_rate):
     q, order = deque([t for t in tasks if indeg[t]==0]), []
     
     while q:
-        t = q.popleft(); order.append(t)
+        t = q.popleft()
+        order.append(t)
         for x in graph[t]:
             indeg[x]-=1
             if indeg[x]==0: q.append(x)
@@ -51,7 +52,8 @@ def run_line_balancing(df, output_rate):
             t = q.popleft()
             feas = [s for s in st if st[s]["time"]+task_time[t]<=cycle_time] or st.keys()
             s = min(feas, key=lambda x: st[x]["time"])
-            st[s]["tasks"].append(t); st[s]["time"]+=task_time[t]
+            st[s]["tasks"].append(t)
+            st[s]["time"]+=task_time[t]
             for x in graph[t]:
                 indeg2[x]-=1
                 if indeg2[x]==0: q.append(x)
